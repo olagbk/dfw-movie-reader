@@ -1,0 +1,17 @@
+main, img {
+    width: 800px;
+    margin: auto;
+}
+
+.back {
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  position: absolute;
+  top: 3rem;
+
+  &:hover {
+    opacity: .85;
+    cursor: pointer;
+  }
+}

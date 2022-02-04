@@ -1,0 +1,7 @@
+<main *ngIf="movie$ | async as movie">
+  <h1> {{ movie.title }}</h1>
+  <h2> {{ movie.overview }}</h2>
+  <img [src]="imageUrl$ | async"/>
+</main>
+
+<div class="back" [style.backgroundImage]="'url(assets/left-arrow.png)'" routerLink=".."></div>

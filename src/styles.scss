@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: monospace;
+  margin: 3rem 5rem;
+}
+
+.btn {
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .75;
+  }
+}

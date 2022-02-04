@@ -1,0 +1,8 @@
+<div class="list-item" *ngIf="movie" [routerLink]="movie.id">
+
+  <h2>{{ movie.title }}</h2>
+
+  <div class="list-item-image" [style.backgroundImage]="imageUrl"></div>
+
+  <div class="btn">Show more</div>
+</div>

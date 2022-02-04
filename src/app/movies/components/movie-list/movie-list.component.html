@@ -1,0 +1,16 @@
+<header>
+  <h1>Latest releases</h1>
+</header>
+
+<main>
+  <app-movie-list-card class="list-item"
+                       *ngFor="let movie of movies$ | async"
+                       [movie]="movie">
+  </app-movie-list-card>
+</main>
+
+<footer>
+  <div class="btn" (click)="loadNextPage()">
+    Load more
+  </div>
+</footer>

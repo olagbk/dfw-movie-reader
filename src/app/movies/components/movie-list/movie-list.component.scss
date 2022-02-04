@@ -1,0 +1,16 @@
+header {
+  border-bottom: 1px solid;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+footer {
+  text-align: center;
+  margin: 3rem;
+}
