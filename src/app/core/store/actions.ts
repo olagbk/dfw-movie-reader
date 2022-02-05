@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import {
   LoadMoviePayload,
-  LoadMoviesPayload,
   LoadMoviesSuccessPayload,
   LoadMovieSuccessPayload,
+  SaveScrollPositionPayload,
 } from './models/action-payload';
 
 export const loadMovie = createAction(`Load movie`, props<LoadMoviePayload>());
@@ -13,3 +13,4 @@ export const loadMovies = createAction('Load movies');
 export const loadMoviesSuccess = createAction('Load movies success', props<LoadMoviesSuccessPayload>());
 export const loadMoviesError = createAction('Load movies error');
 export const loadNextPage = createAction(`Load next page`);
+export const saveScrollPosition = createAction('Save scroll position', props<SaveScrollPositionPayload>());

@@ -26,10 +26,7 @@ export class MovieListCardComponent {
   constructor(private imageService: MovieImageService) {}
 
   private getImageUrl(movie: Movie | undefined): string {
-    const url = movie?.posterPath
-      ? this.imageService.getUrl(movie.posterPath, MovieImageSize.LIST)
-      : this.imageService.fallbackImagePath;
-    return `url(${url})`;
+    return `url(${this.imageService.getUrl(movie?.posterPath, MovieImageSize.LIST)})`;
   }
 
 }

@@ -1,16 +1,17 @@
-import { ActionReducerMap, createReducer, on } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { Movie } from '../../movies/models/movie';
-import { loadMoviesSuccess, loadMovieSuccess } from './actions';
-import { mergeDuplicates, replaceDuplicate } from '../utils';
+import { loadMoviesSuccess, loadMovieSuccess, saveScrollPosition } from './actions';
+import { mergeDuplicates, replaceDuplicate } from './utils';
 
 export interface MovieState {
   movies: Movie[] | null;
   currentPage: number | null;
+  scrollPosition: number;
 }
 
-const initialState: MovieState = { movies: null, currentPage: null };
+const initialState: MovieState = { movies: null, currentPage: null, scrollPosition: 0 };
 
-const reducer = createReducer(initialState,
+export const movieReducer = createReducer(initialState,
   on(loadMovieSuccess, (state, { movie }) => ({
     ...state, movies: replaceDuplicate(state.movies, movie),
   })),
@@ -19,8 +20,5 @@ const reducer = createReducer(initialState,
     currentPage: page,
     movies: state.currentPage ? mergeDuplicates(state.movies, results) : results,
   })),
+  on(saveScrollPosition, (state, { position } ) => ({ ...state, scrollPosition: position }))
 );
-
-export const reducers: ActionReducerMap<unknown> = {
-  movies: reducer,
-};

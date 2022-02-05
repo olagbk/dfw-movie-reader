@@ -5,6 +5,7 @@
 <main>
   <app-movie-list-card class="list-item"
                        *ngFor="let movie of movies$ | async"
+                       [routerLink]="movie.id"
                        [movie]="movie">
   </app-movie-list-card>
 </main>

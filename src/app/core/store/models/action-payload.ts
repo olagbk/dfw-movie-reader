@@ -12,3 +12,7 @@ export interface LoadMoviesSuccessPayload {
   results: Movie[];
   page: number,
 }
+
+export interface SaveScrollPositionPayload {
+  position: number;
+}

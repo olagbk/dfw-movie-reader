@@ -31,10 +31,7 @@ export class MovieDetailComponent {
   private getImageUrl(): Observable<string> {
     return this.movie$.pipe(
       map(movie => movie?.posterPath),
-      map(posterPath => posterPath
-        ? this.imageService.getUrl(posterPath, MovieImageSize.DETAIL)
-        : this.imageService.fallbackImagePath,
-      ),
+      map(posterPath => this.imageService.getUrl(posterPath, MovieImageSize.DETAIL)),
     );
   }
 

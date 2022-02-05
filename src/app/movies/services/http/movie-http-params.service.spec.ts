@@ -1,7 +1,7 @@
 import { TmdbConfig } from '../../../api-config';
 import { MovieHttpParamsService } from './movie-http-params.service';
 
-fdescribe('MovieHttpParamsService', () => {
+describe('MovieHttpParamsService', () => {
   let service: MovieHttpParamsService;
   let config: TmdbConfig;
 
